@@ -3,7 +3,7 @@ function initializeCards() {
   let cards = Array.from(document.querySelectorAll(".card"));
   if (window.innerWidth < 840) {
     gsap.to(cards, {
-      y: (i) => -15 + 10 * i + "%", // Ajuste para pantallas pequeñas
+      y: (i) => -12 + 10 * i + "%", // Ajuste para pantallas pequeñas
       z: (i) => 15 * i,
       opacity: 1,
       duration: 1,
@@ -42,7 +42,7 @@ function nextCard() {
   if (window.innerWidth < 840) {
     // Ajuste para pantallas pequeñas
     gsap.to(lastCard, {
-      y: "+=130%",
+      y: "+=150%",
       duration: 0.75,
       ease: "cubic",
       onComplete: () => {
