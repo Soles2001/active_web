@@ -1,7 +1,7 @@
 // Función para inicializar las tarjetas con ajuste en la posición Y (solo en pantallas pequeñas)
 function initializeCards() {
   let cards = Array.from(document.querySelectorAll(".card"));
-  if (window.innerWidth < 840) {
+  if (window.innerWidth < 750) {
     gsap.to(cards, {
       y: (i) => -12 + 10 * i + "%", // Ajuste para pantallas pequeñas
       z: (i) => 15 * i,
@@ -39,7 +39,7 @@ function nextCard() {
     ease: "cubic",
   });
 
-  if (window.innerWidth < 840) {
+  if (window.innerWidth < 750) {
     // Ajuste para pantallas pequeñas
     gsap.to(lastCard, {
       y: "+=150%",
