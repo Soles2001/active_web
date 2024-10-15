@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Alonso Santamaría">
+  <meta name="description" content="Studio Web">
+  <link rel="icon" type="image/x-icon" href="media/icons/logo_alonso_&_dani.svg">
+  <title>Alonso Santamaría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css\proyectos.css" type="text/css">
+  <link rel="stylesheet" href="css\styles.css" type="text/css">
+
+
+</head>
+
+<body>
+  <nav>
+    <div class="info">
+        <p>2k24</p>
+    </div>
+    <div class="logo">
+        <a href="index.html">
+            <img src="media\img\logo_alonso_&_dani.svg" alt="">
+        </a>
+    </div>
+    <div class="toggle-btn">
+        <button class="burger" onclick="this.classList.toggle('active')"></button>
+    </div>
+</nav>
+<div class="overlay">
+    <div class="overlay-menu">
+        <div class="menu-item">
+            <p><a href="index.html">HOME</a></p>
+        </div>
+        <div class="menu-item">
+            <p><a href="work.html">WORK</a></p>
+        </div>
+        <div class="menu-item">
+            <p><a href="contact.html">CONTACT</a></p>
+        </div>
+    </div>
+</div>
+  <div class="top_cont">
+    <a href="work.html" class="back"> <
+    </a>
+  </div>
+  
+  <div class="wrapper">
+    <div class="marquee">
+      <h1>
+        CHUPA CHUPS - CHUPA CHUPS - CHUPA CHUPS - CHUPA CHUPS - CHUPA CHUPS - CHUPA CHUPS - CHUPA CHUPS -
+      </h1>
+    </div>
+  </div>
+  <div class="proyect">
+    <div class="text">
+      <h3>CHUPA CHUPS</h3>
+      <p>Con la creación de estas ilustraciones, hemos trasmitido nuestro concepto
+        sobre el paso del tiempo.
+
+
+        Para ello hemos realizado 5 renders 3D estilo Low Poly de una habitación que
+        va cambiando, y representa cada una de las fases de la vida. Añadiendo
+        diferentes objetos característicos que definen cada una de las etapas.
+
+
+        Para integrar dentro de los renders, la imagen de Chupa-Chups, y se entienda
+        mejor la idea (Contigo toda una vida), se crearon unas ilustraciones
+        adicionales, que fueron integradas posteriormente en la habitación, dentro de
+        un poster, un cuadro o una alfombra.
+
+      </p>
+    </div>
+    <div class="imgs">
+      <figure><video id="myVideo" autoplay loop muted playsinline>
+            <source src="media\video\origen6.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+      </figure>
+      <div class="horizontal">
+        <figure>
+          <img src="media\img\ch\Chupachups_1.webp" alt="">
+        </figure>
+        <figure>
+          <img src="media\img\ch\Chupachups_2.webp" alt="">
+        </figure>
+      </div>
+    </div>
+    <div class="text">
+      <p>En la esquina inferior y para reafirmar la idea de el paso del tiempo junto a una marca como Chupa Chups,
+        hemos ido retocando el logotipo de Chupa Chups para simular la degradación de una pegatina. Trabajo realizado
+        con Ricardo Ferrin, Alvaro Martín, Kike Echevarria y Daniel Alcolea.
+      </p>
+    </div>
+    <div class="imgs">
+      <figure>
+        <img src="media\img\ch\Chupachups_3.webp" alt="">
+      </figure>
+      <div class="horizontal">
+        <figure>
+          <img src="media\img\ch\logos.webp" alt="">
+        </figure>
+        <figure>
+          <img src="media\img\ch\Entrega_01_Chupa_Chups_Kie_Alonso_Daniel_Ricardo_Alvaro_Presentación.webp" alt="">
+        </figure>
+      </div>
+    </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var video = document.getElementById('myVideo');
+            video.play();
+        });
+    </script>
+  <!-- JS BOOTSTRAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/CSSRulePlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
