@@ -1,36 +1,29 @@
-CustomEase.create("cubic", "0.83, 0, 0.17, 1");
-let isAnimating = false;
-let canScroll = true;
-
-// Función para dividir el texto en spans
-function splitTextIntoSpans(selector) {
-  let elements = document.querySelectorAll(selector);
-  elements.forEach((element) => {
-    let text = element.innerText;
-    let splitText = text
-      .split("")
-      .map(function (char) {
-        return `<span>${char === " " ? "&nbsp;&nbsp;" : char}</span>`;
-      })
-      .join("");
-    element.innerHTML = splitText;
-  });
-}
-
-// Función para inicializar las tarjetas
+// Función para inicializar las tarjetas con ajuste en la posición Y (solo en pantallas pequeñas)
 function initializeCards() {
   let cards = Array.from(document.querySelectorAll(".card"));
-  gsap.to(cards, {
-    y: (i) => -15 + 15 * i + "%",
-    z: (i) => 15 * i,
-    opacity: 1,
-    duration: 1,
-    ease: "cubic",
-    stagger: -0.1,
-  });
+  if (window.innerWidth < 840) {
+    gsap.to(cards, {
+      y: (i) => -15 + 10 * i + "%", // Ajuste para pantallas pequeñas
+      z: (i) => 15 * i,
+      opacity: 1,
+      duration: 1,
+      ease: "cubic",
+      stagger: -0.1,
+    });
+  } else {
+    // Configuración original para pantallas grandes
+    gsap.to(cards, {
+      y: (i) => -15 + 15 * i + "%", // Configuración original
+      z: (i) => 15 * i,
+      opacity: 1,
+      duration: 1,
+      ease: "cubic",
+      stagger: -0.1,
+    });
+  }
 }
 
-// Función para avanzar a la siguiente tarjeta
+// Función para avanzar a la siguiente tarjeta (ajuste para pantallas pequeñas)
 function nextCard() {
   if (isAnimating) return;
   isAnimating = true;
@@ -46,20 +39,39 @@ function nextCard() {
     ease: "cubic",
   });
 
-  gsap.to(lastCard, {
-    y: "+=150%",
-    duration: 0.75,
-    ease: "cubic",
-    onComplete: () => {
-      slider.prepend(lastCard);
-      initializeCards();
-      gsap.set(lastCard.querySelectorAll("h1 span"), { y: -200 });
+  if (window.innerWidth < 840) {
+    // Ajuste para pantallas pequeñas
+    gsap.to(lastCard, {
+      y: "+=130%",
+      duration: 0.75,
+      ease: "cubic",
+      onComplete: () => {
+        slider.prepend(lastCard);
+        initializeCards();
+        gsap.set(lastCard.querySelectorAll("h1 span"), { y: -200 });
 
-      setTimeout(() => {
-        isAnimating = false;
-      }, 1000);
-    },
-  });
+        setTimeout(() => {
+          isAnimating = false;
+        }, 1000);
+      },
+    });
+  } else {
+    // Configuración original para pantallas grandes
+    gsap.to(lastCard, {
+      y: "+=150%",
+      duration: 0.75,
+      ease: "cubic",
+      onComplete: () => {
+        slider.prepend(lastCard);
+        initializeCards();
+        gsap.set(lastCard.querySelectorAll("h1 span"), { y: -200 });
+
+        setTimeout(() => {
+          isAnimating = false;
+        }, 1000);
+      },
+    });
+  }
 
   gsap.to(nextCard.querySelectorAll("h1 span"), {
     y: 0,
@@ -69,46 +81,7 @@ function nextCard() {
   });
 }
 
-// Función para retroceder a la tarjeta anterior
-function prevCard() {
-  if (isAnimating) return;
-  isAnimating = true;
-
-  let slider = document.querySelector(".slider");
-  let cards = Array.from(slider.querySelectorAll(".card"));
-  let firstCard = cards.shift();
-  let prevCard = cards[0];
-
-  gsap.to(firstCard.querySelectorAll("h1 span"), {
-    y: -200,
-    duration: 0.75,
-    ease: "cubic",
-  });
-
-  gsap.to(firstCard, {
-    y: "-=150%",
-    duration: 0.75,
-    ease: "cubic",
-    onComplete: () => {
-      slider.append(firstCard);
-      initializeCards();
-      gsap.set(firstCard.querySelectorAll("h1 span"), { y: 200 });
-
-      setTimeout(() => {
-        isAnimating = false;
-      }, 1000);
-    },
-  });
-
-  gsap.to(prevCard.querySelectorAll("h1 span"), {
-    y: 0,
-    duration: 1,
-    ease: "cubic",
-    stagger: 0.05,
-  });
-}
-
-// Función para manejar el evento de scroll con throttling
+// Función para manejar el evento de scroll con throttling (solo avanzamos hacia adelante)
 function handleScroll(event) {
   if (!canScroll) return;
 
@@ -116,8 +89,6 @@ function handleScroll(event) {
 
   if (event.deltaY > 0) {
     nextCard();
-  } else {
-    prevCard();
   }
 
   canScroll = false; // Deshabilitar el scroll temporalmente
@@ -133,10 +104,12 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.set("h1 span", { y: -200 });
   gsap.set(".slider .card:last-child h1 span", { y: 0 });
 
-  // Añadir eventos a los botones
+  // Añadir evento al botón para avanzar
   document.querySelector(".next-btn").addEventListener("click", nextCard);
-  document.querySelector(".prev-btn").addEventListener("click", prevCard);
 
   // Añadir evento de scroll al window
   window.addEventListener("wheel", handleScroll, { passive: true });
+
+  // Recalcular las posiciones al redimensionar la ventana
+  window.addEventListener("resize", initializeCards);
 });
