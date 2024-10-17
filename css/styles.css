@@ -51,7 +51,7 @@ button {
 
 
 body {
-    background-color: white;
+    background-color: #E4E4E4;
 }
 
 
@@ -255,7 +255,7 @@ header {
 /* HEADER IMAGES SHOW */
 .container {
     height: 100vh;
-    background-color: white;
+    background-color: #E4E4E4;
     width:100vw;
 }
 
@@ -279,7 +279,7 @@ header {
 }
 
 .box {
-    background-color: white;
+    background-color: #E4E4E4;
     opacity: 1;
     position: absolute;
     top: 0;
@@ -375,7 +375,7 @@ button a {
 }
 
 .second-btn{
-    background-color: white;
+    background-color: #E4E4E4;
     border: 0;
 }
 

@@ -65,7 +65,7 @@ body{
 .copy {
   position: absolute;
   text-align: center;
-  color: white;
+  color: #E4E4E4;
   line-height: 90%;
   top: 15%;
   left: 50%;
@@ -81,11 +81,11 @@ body{
 h1 span {
   position: relative;
   display: inline-block;
-  color: white;
+  color: #E4E4E4;
 }
 
 .copy p {
-  color: white;
+  color: #E4E4E4;
 }
 
 @media (max-width: 840px) {
