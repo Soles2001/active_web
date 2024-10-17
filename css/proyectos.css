@@ -44,7 +44,7 @@ body{
 }
 
 .marquee {
-    #E4E4E4-space: nowrap;
+    white-space: nowrap;
     display: inline-block;
     animation: marquee 43s linear infinite;
     -webkit-animation: marquee 43s linear infinite;
