@@ -250,3 +250,9 @@ figure {
         max-width: 100%;
     }
 }
+
+.imgs>figure:first-of-type>img{
+    max-height: 100vh;
+    object-fit: cover;
+}
+
