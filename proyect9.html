@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Alonso Santamaría">
+  <meta name="description" content="Studio Web">
+  <link rel="icon" type="image/x-icon" href="media\img\logo_alonso_&_dani.svg">
+  <title>Alonso Santamaría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css\proyectos.css" type="text/css">
+  <link rel="stylesheet" href="css\styles.css" type="text/css">
+
+
+</head>
+
+<body>
+  <nav>
+    <div class="info">
+      <p>2k24</p>
+    </div>
+    <div class="logo">
+      <a href="index.html">
+        <img src="media\img\logo_alonso_&_dani.svg" alt="">
+      </a>
+    </div>
+    <div class="toggle-btn">
+      <button class="burger" onclick="this.classList.toggle('active')"></button>
+    </div>
+  </nav>
+  <div class="overlay">
+    <div class="overlay-menu">
+      <div class="menu-item">
+        <p><a href="index.html">HOME</a></p>
+      </div>
+      <div class="menu-item">
+        <p><a href="works.html">WORK</a></p>
+      </div>
+      <div class="menu-item">
+        <p><a href="contact.html">CONTACT</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="top_cont">
+    <a href="works.html" class="back">
+      < </a> </div> <div class="wrapper">
+        <div class="marquee">
+          <h1>
+            KELLER - KELLER - KELLER - KELLER - KELLER - KELLER -
+            KELLER - KELLER - KELLER - KELLER - KELLER - KELLER -KELLER -
+          </h1>
+        </div>
+  </div>
+  <div class="proyect">
+    <div class="text">
+      <h3>KELLER</h3>
+      <p>This project has been realized together with Juan Marcos Keller(music producer and illustrator). Keller is a contemporary urban clothing brand, inspired by the initial concepts of the philosophy of the American beat generation. The graphics, illustrations and photographs are based on spontaneous ideas, captured in an instant and worked to achieve dynamism and freshness.
+      </p>
+    </div>
+    <div class="imgs">
+      <figure>
+        <video id="myVideo" autoplay loop muted playsinline>
+          <source src="media\img\kel\FINAL.mp4" type="video/mp4">
+          Tu navegador no soporta el elemento de video.
+        </video>
+      </figure>
+      <div class="horizontal">
+        <figure>
+          <img src="media\img\kel\Tote Bag Mockup (1).webp" alt="">
+        </figure>
+        <figure>
+          <img src="media\img\kel\Hat Mockup.webp" alt="">
+        </figure>
+      </div>
+    </div>
+    <div class="text">
+      <p>The illustrations, with fine and broken lines, reflect this fast drawing style, evoking the Madrid society (city of origin of the brand), which is characterized by a fast-paced daily life and a customs that is constantly reinventing itself.
+      </p>
+    </div>
+    <div class="imgs">
+      <figure>
+        <img src="media\img\kel\Sin título-2.webp" alt="">
+      </figure>
+      <!-- <div class="horizontal">
+        <figure>
+          <img src="media\img\adn\ADN FORUM-50.webp" alt="">
+        </figure>
+        <figure>
+          <img src="media\img\adn\Sin título-1.webp" alt="">
+        </figure>
+      </div> -->
+    </div>
+
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      var video = document.getElementById('myVideo');
+      video.play();
+    });
+  </script>
+  <!-- JS BOOTSTRAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/CSSRulePlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <script src="js/scripts.js"></script>
+</body>

@@ -1,0 +1,53 @@
+.trabajos {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 8em;
+    position: absolute;
+
+
+}
+
+.colum {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    padding: 1em;
+    gap: 2.2em;
+}
+
+.trabajo>figure>img,
+.trabajo>figure>video {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+@media (max-width: 900px) {
+    .colum {
+        width: 100%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .colum {
+        width: 100%;
+    }
+  }
