@@ -720,6 +720,15 @@ footer div {
         padding-top: 20%;
         text-align: center;
     }
+
+    .menu-item p {
+        font-size: 16vw;
+    }
+}
+
+
+.contact{
+    max-height: 100vh;
 }
 
 

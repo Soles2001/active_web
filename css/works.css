@@ -39,15 +39,33 @@ img {
 
 }
 
+.none-desktop{
+    display: none;
+}
 
 @media (max-width: 900px) {
     .colum {
         width: 100%;
     }
-  }
 
-  @media (max-width: 500px) {
+    .none-tablet {
+        display: none;
+    }
+    
+    .none-desktop{
+    display: flex;
+}
+}
+
+@media (max-width: 500px) {
     .colum {
         width: 100%;
     }
-  }
+
+    .none-tablet {
+        display: none;
+    }
+    .none-desktop{
+    display: flex;
+}
+}
